@@ -1,0 +1,20 @@
+<mat-card class="add-new-stock-card">
+  <mat-label class="add-new-stock-card-label">Add New Stock</mat-label>
+  <form class="search-and-submit-form">
+    <mat-form-field class="example-full-width">
+      <mat-label class="insert-ticker-text">Insert Ticker</mat-label>
+      <input class="input-ticker-form" #searchBar matInput type="text" value="">
+    </mat-form-field>
+    <button class="add-stock-button" mat-button (click)="createStock(searchBar.value)">Add Stock</button>
+  </form>
+</mat-card>
+
+<mat-card class="show-available-stocks">
+  <mat-label class="show-available-stocks-label">Delete Stock</mat-label>
+  <mat-list *ngFor="let stock of stocks">
+    <mat-list-item class="stocks-list-item">{{stock.ticker}}
+      <span class="spacer"></span>
+      <button class="delete-stock-button" mat-button (click)="deleteStock(stock.id)">Delete</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

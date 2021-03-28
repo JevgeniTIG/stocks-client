@@ -1,0 +1,28 @@
+<div class="no-available-stocks" *ngIf="stocks.length == 0">
+  <span>No available stocks</span>
+</div>
+
+<div class="total-number-of-stocks">
+  <span>{{stocks.length}} STOCKS IN YOUR WATCHLIST</span>
+</div>
+
+<div class="stocks-list">
+  <mat-list *ngFor="let stock of stocks">
+    <mat-list-item class="stocks-list-item">
+      <button class="company-info-button" (click)="openStockInfoDialog(stock)">{{stock.companyName}}</button>
+      </mat-list-item>
+    <span class="stock-ticker">{{stock.ticker}}</span>
+    <span class="vertical-divider">|</span>
+    <span class="stock-currency">{{stock.currency}}</span>
+    <span class="vertical-divider">|</span>
+    <span class="stock-exchange">{{stock.stockExchange}}</span>
+    <span class="vertical-divider">|</span>
+    <span class="stock-exchange">{{stock.minPrice}}</span>
+    <span class="vertical-divider">|</span>
+    <span class="stock-exchange">{{stock.maxPrice}}</span>
+    <p class="stock-divider">
+      ................................................................................................................................................................</p>
+  </mat-list>
+</div>
+
+

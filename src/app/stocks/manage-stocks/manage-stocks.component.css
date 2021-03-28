@@ -1,0 +1,43 @@
+.add-new-stock-card, .show-available-stocks {
+  margin-top: 100px;
+  display: inline-list-item;
+  background-color: #282828;
+
+}
+
+.add-new-stock-card-label, .show-available-stocks-label{
+  color: #0EB200;
+  margin-left: 50px;
+}
+
+.search-and-submit-form {
+  margin-top: 20px;
+  margin-left: 50px;
+  color: #CAECC8;
+}
+
+
+.insert-ticker-text {
+  color: #CAECC8;
+}
+
+.add-stock-button {
+  color: #0EB200;
+  margin-left: 6px;
+
+}
+
+.stocks-list-item {
+  color: #CAECC8;
+  margin-top: 20px;
+  margin-left: 34px;
+  margin-bottom: -40px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.delete-stock-button {
+  margin-right: 600px;
+}

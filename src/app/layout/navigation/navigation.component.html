@@ -1,0 +1,22 @@
+<mat-toolbar>
+
+  <span class="spacer"></span>
+
+  <button routerLink="/stocks">
+    My Stocks
+  </button>
+  <span class="border-line"> | </span>
+  <button routerLink="/prices">
+    Prices
+  </button>
+  <span *ngIf="highlightedStocks.length > 0" class="border-line"> | </span>
+  <button *ngIf="highlightedStocks.length > 0" class="highlighted-button" routerLink="/highlighted-prices">
+    Highlighted Stocks
+  </button>
+  <span class="border-line"> | </span>
+  <button routerLink="/manage-stocks">
+    Manage Stocks
+  </button>
+
+
+</mat-toolbar>

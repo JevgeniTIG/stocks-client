@@ -1,0 +1,26 @@
+.mat-toolbar{
+  z-index: 10000;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #CAECC8;
+}
+
+button {
+  border: none;
+  color: #282828;
+  background: none;
+}
+
+.border-line {
+  color: #282828;
+}
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.highlighted-button {
+  color: #0EB200;
+}

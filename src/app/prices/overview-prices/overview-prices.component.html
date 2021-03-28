@@ -1,0 +1,26 @@
+<div class = "no-available-stocks" *ngIf="stocks.length == 0">
+  <span>No available stocks</span>
+</div>
+
+
+<div class="stocks-list">
+  <mat-list *ngFor="let stock of stocks">
+    <mat-list-item class="stocks-list-item">{{stock.ticker}} ={{stock.currency}}=</mat-list-item>
+    <div class="dates-list">
+      <div class="all-dates" *ngFor="let price of stock.prices">
+        <span class="date-by-date">{{price.createdDate.toString().substring(5, 10)}}</span>
+      </div>
+    </div>
+
+    <div class="all-prices" *ngFor="let price of stock.prices">
+        <span class="price-by-price">{{price.price}}</span>
+
+     </div>
+    <mat-divider class="horizontal-divider"></mat-divider>
+    </mat-list>
+
+</div>
+
+
+
+

@@ -1,0 +1,46 @@
+.stocks-list {
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.stocks-list-item {
+  color: #0EB200;
+}
+
+.stock-divider {
+  color: #CAECC8;
+  margin-left: 16px;
+}
+
+.price-by-price{
+  color: #CAECC8;
+  margin-left: 14px;
+  display: inline;
+}
+
+.no-available-stocks {
+  color: #0EB200;
+  margin-top: 100px;
+  margin-left: 70px;
+}
+
+.all-prices{
+  display: inline;
+}
+
+.all-dates{
+  display: inline;
+}
+
+.horizontal-divider {
+  background: #CAECC8;
+  border-style: double;
+  width: 96%;
+  margin-left: 10px;
+}
+
+.date-by-date{
+  color: #CAECC8;
+  margin-left: 14px;
+
+}

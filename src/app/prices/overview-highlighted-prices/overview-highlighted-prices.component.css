@@ -1,0 +1,19 @@
+.stocks-list {
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.stocks-list-item {
+  color: #0EB200;
+}
+
+.stock-divider {
+  color: #CAECC8;
+  margin-left: 16px;
+}
+
+.stock-ticker, .stock-currency, .stock-exchange, .vertical-divider {
+  color: #CAECC8;
+  margin-left: 16px;
+}
+

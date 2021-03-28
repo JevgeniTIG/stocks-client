@@ -1,0 +1,10 @@
+<div class="stocks-list">
+  <mat-list *ngFor="let stock of highlightedStocks">
+    <mat-list-item class="stocks-list-item">{{stock.ticker}}</mat-list-item>
+    <span class="stock-ticker">- {{stock.dropInPercent}} %</span>
+
+    <p class="stock-divider">................................................................................................................................................................</p>
+  </mat-list>
+</div>
+
+<div>{{highlightedStocks.length}}</div>
