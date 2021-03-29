@@ -1,0 +1,10 @@
+<div class="stocks-list">
+  <mat-list *ngFor="let stock of highlightedStocks">
+    <mat-list-item class="stock-ticker">{{stock.ticker}}</mat-list-item>
+    <span *ngIf="stock.dropInPercent > 20 && stock.dropInPercent <= 25" class="less-than-twenty" style="color: darkorange">- {{stock.dropInPercent}} %</span>
+    <span *ngIf="stock.dropInPercent > 25 && stock.dropInPercent <= 30" class="less-than-twenty-five" style="color: orangered">- {{stock.dropInPercent}} %</span>
+    <span *ngIf="stock.dropInPercent > 30" class="less-than-thirty" style="color: red">- {{stock.dropInPercent}} %</span>
+    <p class="stock-divider">................................................................................................................................................................</p>
+  </mat-list>
+</div>
+

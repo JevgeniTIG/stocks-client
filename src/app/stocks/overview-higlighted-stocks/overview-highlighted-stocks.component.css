@@ -3,7 +3,7 @@
   margin-left: 50px;
 }
 
-.stocks-list-item {
+.stock-ticker {
   color: #0EB200;
 }
 
@@ -12,8 +12,7 @@
   margin-left: 16px;
 }
 
-.stock-ticker, .stock-currency, .stock-exchange, .vertical-divider {
-  color: #CAECC8;
+.less-than-twenty, .less-than-twenty-five, .less-than-thirty {
   margin-left: 16px;
 }
 

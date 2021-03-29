@@ -3,13 +3,13 @@ import {PriceService} from '../../services/price.service';
 import {HighlightedStock} from '../../models/HighlightedStock';
 
 @Component({
-  selector: 'app-overview-highlighted-prices',
-  templateUrl: './overview-highlighted-prices.component.html',
-  styleUrls: ['./overview-highlighted-prices.component.css']
+  selector: 'app-overview-highlighted-stocks',
+  templateUrl: './overview-highlighted-stocks.component.html',
+  styleUrls: ['./overview-highlighted-stocks.component.css']
 })
 
 
-export class OverviewHighlightedPricesComponent implements OnInit {
+export class OverviewHighlightedStocksComponent implements OnInit {
 
   highlightedStocks: HighlightedStock[];
 

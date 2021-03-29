@@ -12,6 +12,10 @@ button {
   background: none;
 }
 
+button:focus {
+  outline:0 !important;
+}
+
 .border-line {
   color: #282828;
 }
@@ -24,8 +28,16 @@ button {
 .highlighted-button {
   color: #0EB200;
 }
+
+.highlighted-button:focus {
+  outline:0 !important;
+}
+
 .logout{
   margin-left: 40px;
   font-size: small;
+}
 
+.logout:focus {
+  outline:0 !important;
 }

@@ -15,10 +15,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OverviewStocksComponent} from './stocks/overview-stocks/overview-stocks.component';
 import {ManageStocksComponent} from './stocks/manage-stocks/manage-stocks.component';
 import {OverviewPricesComponent} from './prices/overview-prices/overview-prices.component';
-import {OverviewHighlightedPricesComponent} from './prices/overview-highlighted-prices/overview-highlighted-prices.component';
 import { OverviewStockCompanyInfoComponent } from './stocks/overview-stock-company-info/overview-stock-company-info.component';
 import {authInterceptorProviders} from './helper/auth-interceptor.service';
 import {authErrorInterceptorProviders} from './helper/error-interceptor.service';
+import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-stocks/overview-highlighted-stocks.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import {authErrorInterceptorProviders} from './helper/error-interceptor.service'
     OverviewStocksComponent,
     ManageStocksComponent,
     OverviewPricesComponent,
-    OverviewHighlightedPricesComponent,
+    OverviewHighlightedStocksComponent,
     routingComponents,
     OverviewStockCompanyInfoComponent
   ],

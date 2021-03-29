@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {OverviewStocksComponent} from './stocks/overview-stocks/overview-stocks.component';
 import {ManageStocksComponent} from './stocks/manage-stocks/manage-stocks.component';
 import {OverviewPricesComponent} from './prices/overview-prices/overview-prices.component';
-import {OverviewHighlightedPricesComponent} from './prices/overview-highlighted-prices/overview-highlighted-prices.component';
+import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-stocks/overview-highlighted-stocks.component';
 import {LoginComponent} from './auth/login/login.component';
 import {AuthGuardService} from './helper/auth-guard.service';
 
@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'stocks', component: OverviewStocksComponent, canActivate: [AuthGuardService]},
   {path: 'manage-stocks', component: ManageStocksComponent, canActivate: [AuthGuardService]},
   {path: 'prices', component: OverviewPricesComponent, canActivate: [AuthGuardService]},
-  {path: 'highlighted-prices', component: OverviewHighlightedPricesComponent, canActivate: [AuthGuardService]},
+  {path: 'highlighted-prices', component: OverviewHighlightedStocksComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
