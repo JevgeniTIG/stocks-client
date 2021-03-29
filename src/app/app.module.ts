@@ -17,6 +17,8 @@ import {ManageStocksComponent} from './stocks/manage-stocks/manage-stocks.compon
 import {OverviewPricesComponent} from './prices/overview-prices/overview-prices.component';
 import {OverviewHighlightedPricesComponent} from './prices/overview-highlighted-prices/overview-highlighted-prices.component';
 import { OverviewStockCompanyInfoComponent } from './stocks/overview-stock-company-info/overview-stock-company-info.component';
+import {authInterceptorProviders} from './helper/auth-interceptor.service';
+import {authErrorInterceptorProviders} from './helper/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,7 @@ import { OverviewStockCompanyInfoComponent } from './stocks/overview-stock-compa
     LayoutModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders, authErrorInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

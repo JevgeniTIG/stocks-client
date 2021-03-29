@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {PriceService} from '../../services/price.service';
 import {Stock} from '../../models/Stock';
+import {User} from '../../models/User';
+import {TokenStorageService} from '../../services/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -9,18 +12,32 @@ import {Stock} from '../../models/Stock';
 })
 export class NavigationComponent implements OnInit {
 
+  isLoggedIn = false;
+  user: User;
 
   highlightedStocks: Stock[];
 
-  constructor(private priceService: PriceService) {
+  constructor(private tokenService: TokenStorageService,
+              private priceService: PriceService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
-    this.priceService.evaluatePrices()
-      .subscribe(data => {
-        this.highlightedStocks = data;
-        console.log(data);
-      });
+    this.isLoggedIn = !!this.tokenService.getToken();
+
+    if (this.isLoggedIn) {
+      this.priceService.evaluatePrices()
+        .subscribe(data => {
+          this.highlightedStocks = data;
+          console.log(data);
+        });
+    }
+  }
+
+
+  logOut(): void {
+    this.tokenService.logOut();
+    this.router.navigate(['']);
   }
 
 

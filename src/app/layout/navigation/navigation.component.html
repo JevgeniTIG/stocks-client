@@ -18,5 +18,10 @@
     Manage Stocks
   </button>
 
+  <button *ngIf="isLoggedIn" class="logout" (click)="logOut()" mat-icon-button>
+Logout
+  </button>
+
+
 
 </mat-toolbar>

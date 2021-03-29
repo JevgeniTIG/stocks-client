@@ -4,13 +4,16 @@ import {OverviewStocksComponent} from './stocks/overview-stocks/overview-stocks.
 import {ManageStocksComponent} from './stocks/manage-stocks/manage-stocks.component';
 import {OverviewPricesComponent} from './prices/overview-prices/overview-prices.component';
 import {OverviewHighlightedPricesComponent} from './prices/overview-highlighted-prices/overview-highlighted-prices.component';
+import {LoginComponent} from './auth/login/login.component';
+import {AuthGuardService} from './helper/auth-guard.service';
 
 const routes: Routes = [
-  {path: 'stocks', component: OverviewStocksComponent},
-  {path: 'manage-stocks', component: ManageStocksComponent},
-  {path: 'prices', component: OverviewPricesComponent},
-  {path: 'highlighted-prices', component: OverviewHighlightedPricesComponent},
-  {path: '', component: OverviewStocksComponent}
+  {path: 'stocks', component: OverviewStocksComponent, canActivate: [AuthGuardService]},
+  {path: 'manage-stocks', component: ManageStocksComponent, canActivate: [AuthGuardService]},
+  {path: 'prices', component: OverviewPricesComponent, canActivate: [AuthGuardService]},
+  {path: 'highlighted-prices', component: OverviewHighlightedPricesComponent, canActivate: [AuthGuardService]},
+  {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -19,5 +22,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [OverviewStocksComponent];
+export const routingComponents = [OverviewStocksComponent, LoginComponent];
 

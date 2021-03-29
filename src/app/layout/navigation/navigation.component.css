@@ -24,3 +24,8 @@ button {
 .highlighted-button {
   color: #0EB200;
 }
+.logout{
+  margin-left: 40px;
+  font-size: small;
+
+}
