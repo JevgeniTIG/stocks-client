@@ -13,10 +13,14 @@
   <button *ngIf="highlightedStocks.length > 0" class="highlighted-button" routerLink="/highlighted-prices">
     Highlighted Stocks
   </button>
-  <span class="border-line"> | </span>
-  <button routerLink="/manage-stocks">
+  <span class="border-line" *ngIf="isDataLoaded && user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks"> | </span>
+
+  <button *ngIf="isDataLoaded && user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks">
     Manage Stocks
   </button>
+
+
+
 
   <button *ngIf="isLoggedIn" class="logout" (click)="logOut()" mat-icon-button>
 Logout

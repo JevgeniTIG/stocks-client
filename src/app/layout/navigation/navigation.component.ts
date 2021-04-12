@@ -4,6 +4,7 @@ import {Stock} from '../../models/Stock';
 import {User} from '../../models/User';
 import {TokenStorageService} from '../../services/token-storage.service';
 import {Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,12 +14,14 @@ import {Router} from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   isLoggedIn = false;
+  isDataLoaded = false;
   user: User;
 
   highlightedStocks: Stock[];
 
   constructor(private tokenService: TokenStorageService,
               private priceService: PriceService,
+              private userService: UserService,
               private router: Router) {
   }
 
@@ -31,6 +34,13 @@ export class NavigationComponent implements OnInit {
           this.highlightedStocks = data;
           console.log(data);
         });
+
+      this.userService.getCurrentUser()
+        .subscribe(data => {
+          this.user = data;
+          this.isDataLoaded = true;
+        });
+
     }
   }
 

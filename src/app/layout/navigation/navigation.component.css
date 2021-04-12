@@ -17,6 +17,7 @@ button:focus {
   outline:0 !important;
 }
 
+
 .border-line {
   color: #282828;
 }
@@ -36,6 +37,7 @@ button:focus {
 
 .logout{
   margin-left: 40px;
+  margin-right: 20px;
   font-size: small;
 }
 

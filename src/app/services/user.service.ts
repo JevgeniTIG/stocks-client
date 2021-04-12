@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {conf} from '../config/conf';
 
-const USER_API = conf.host + '/user/';
+const USER_API = conf.host + 'api/user/';
 
 @Injectable({
   providedIn: 'root'

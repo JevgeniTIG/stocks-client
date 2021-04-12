@@ -16,7 +16,7 @@ export class OverviewStockCompanyInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  closeDialog() {
+  closeDialog(): void {
     this.dialogRef.close();
   }
 
