@@ -1,19 +1,25 @@
 .add-new-stock-card {
   margin-top: 100px;
   display: inline-list-item;
+  border-radius: unset;
+  background-color: #282828;
+
+}
+
+
+.show-available-stocks {
+  display: inline-list-item;
+  border-radius: unset;
   background-color: #282828;
 }
 
-.show-available-stocks {
-  margin-top: 60px;
-  display: inline-list-item;
-  background-color: #282828;
-}
 
 .add-new-stock-card-label, .show-available-stocks-label{
   color: #0EB200;
   margin-left: 50px;
 }
+
+
 
 .search-and-submit-form {
   margin-top: 20px;
@@ -34,7 +40,7 @@
 
 .stocks-list-item {
   color: #CAECC8;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   margin-left: 34px;
   margin-bottom: -20px;
 }
@@ -45,4 +51,12 @@
 
 .delete-stock-button {
   margin-right: 600px;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: #CAECC8 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  background-color: #0EB200 !important;
 }

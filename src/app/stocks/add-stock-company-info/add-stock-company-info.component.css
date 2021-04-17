@@ -1,0 +1,16 @@
+::ng-deep.mat-dialog-container {
+  background: #CAECC8;
+}
+.w-20 {
+  margin-left: 300px;
+}
+.label-text {
+  font-size: medium;
+  color: #0EB200;
+}
+.main-info {
+  color: #282828;
+}
+
+
+

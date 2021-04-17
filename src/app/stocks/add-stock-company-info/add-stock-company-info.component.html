@@ -1,0 +1,28 @@
+<button (click)="closeDialog()" class="w-20"
+        mat-button mat-dialog-close disableRipple>
+  Exit
+</button>
+
+<p class="label-text">{{data.companyName}}</p>
+<p class="main-info">{{data.companyInfo}}</p>
+
+<form *ngIf="data.companyInfo == null" class="input-and-submit-form">
+  <mat-form-field class="example-full-width">
+    <mat-label class="insert-info-text">Insert Info</mat-label>
+    <input class="input-info-form" #inputText matInput type="text">
+  </mat-form-field>
+  <button class="add-stock-info-button" (click)="submit(inputText.value)" mat-button>
+    Add Info
+  </button>
+</form>
+
+<form *ngIf="data.companyInfo != null" class="input-and-submit-form">
+  <mat-form-field class="example-full-width">
+    <mat-label class="insert-info-text">Update Info</mat-label>
+    <input class="input-info-form" #inputText matInput type="text">
+  </mat-form-field>
+  <button class="add-stock-info-button" (click)="submit(inputText.value)" mat-button>
+    Update
+  </button>
+</form>
+

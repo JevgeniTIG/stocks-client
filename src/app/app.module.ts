@@ -19,6 +19,7 @@ import { OverviewStockCompanyInfoComponent } from './stocks/overview-stock-compa
 import {authInterceptorProviders} from './helper/auth-interceptor.service';
 import {authErrorInterceptorProviders} from './helper/error-interceptor.service';
 import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-stocks/overview-highlighted-stocks.component';
+import {AddStockCompanyInfoComponent} from './stocks/add-stock-company-info/add-stock-company-info.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-s
     OverviewPricesComponent,
     OverviewHighlightedStocksComponent,
     routingComponents,
-    OverviewStockCompanyInfoComponent
+    OverviewStockCompanyInfoComponent,
+    AddStockCompanyInfoComponent
   ],
   imports: [
     BrowserModule,

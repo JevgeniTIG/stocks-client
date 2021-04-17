@@ -1,7 +1,7 @@
 <mat-card class="add-new-stock-card">
   <mat-label class="add-new-stock-card-label">Add New Stock</mat-label>
   <form class="search-and-submit-form">
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="add-new-stock-mat-form-field">
       <mat-label class="insert-ticker-text">Insert Ticker</mat-label>
       <input class="input-ticker-form" #searchBar matInput type="text" value="">
     </mat-form-field>
@@ -14,6 +14,7 @@
   <mat-list *ngFor="let stock of stocks">
     <mat-list-item class="stocks-list-item">{{stock.ticker}}
       <span class="spacer"></span>
+      <button class="add-stock-info-button" mat-button (click)="openAddStockInfoDialog(stock)">Modify</button>
       <button class="delete-stock-button" mat-button (click)="deleteStock(stock.id)">Delete</button>
     </mat-list-item>
   </mat-list>

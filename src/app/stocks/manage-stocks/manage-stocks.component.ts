@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {StockService} from '../../services/stock.service';
 import {Stock} from '../../models/Stock';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Observable} from 'rxjs';
 import {NotificationService} from '../../services/notification.service';
 import {Router} from '@angular/router';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {AddStockCompanyInfoComponent} from '../add-stock-company-info/add-stock-company-info.component';
 
 @Component({
   selector: 'app-manage-stocks',
@@ -17,8 +17,10 @@ export class ManageStocksComponent implements OnInit {
 
   stocks: Stock[];
 
+
   constructor(private stockService: StockService,
               private notificationService: NotificationService,
+              private dialog: MatDialog,
               private router: Router) {
   }
 
@@ -55,6 +57,15 @@ export class ManageStocksComponent implements OnInit {
         });
     }
   }
+
+
+  openAddStockInfoDialog(stock: Stock): void {
+    const dialogAddStockCompanyInfoConfig = new MatDialogConfig();
+    dialogAddStockCompanyInfoConfig.width = '400px';
+    dialogAddStockCompanyInfoConfig.data = stock;
+    this.dialog.open(AddStockCompanyInfoComponent, dialogAddStockCompanyInfoConfig);
+  }
+
 
   reload(): void {
     window.location.reload();
