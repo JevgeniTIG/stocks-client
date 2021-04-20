@@ -1,4 +1,4 @@
-<mat-card class="add-new-stock-card">
+<mat-card class="add-new-stock-card" *ngIf="isDataLoaded && user.email == 'jastream@hotmail.com'">
   <mat-label class="add-new-stock-card-label">Add New Stock</mat-label>
   <form class="search-and-submit-form">
     <mat-form-field class="add-new-stock-mat-form-field">
@@ -9,7 +9,7 @@
   </form>
 </mat-card>
 
-<mat-card class="show-available-stocks">
+<mat-card class="show-available-stocks" *ngIf="isDataLoaded && user.email == 'jastream@hotmail.com'">
   <mat-label class="show-available-stocks-label">Delete Stock</mat-label>
   <mat-list *ngFor="let stock of stocks">
     <mat-list-item class="stocks-list-item">{{stock.ticker}}
@@ -19,3 +19,7 @@
     </mat-list-item>
   </mat-list>
 </mat-card>
+
+<div class="guest-mode-manage-stocks-page" *ngIf="isDataLoaded && user.email != 'jastream@hotmail.com'">
+  <span>Only admin of this site can manage stocks.</span>
+</div>

@@ -40,7 +40,6 @@
 
 .stocks-list-item {
   color: #CAECC8;
-  /*margin-top: 20px;*/
   margin-left: 34px;
   margin-bottom: -20px;
 }
@@ -59,4 +58,10 @@
 
 ::ng-deep.mat-form-field-ripple {
   background-color: #0EB200 !important;
+}
+
+.guest-mode-manage-stocks-page{
+  color: #0EB200;
+  margin-left: 66px;
+  margin-top: 100px;
 }

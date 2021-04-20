@@ -44,3 +44,9 @@ button:focus {
 .logout:focus {
   outline:0 !important;
 }
+
+.guest-mode-limited-functionality {
+  margin-top: 36px;
+  margin-left: 50px;
+  font-size: small;
+}

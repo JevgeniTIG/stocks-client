@@ -5,6 +5,9 @@ import {NotificationService} from '../../services/notification.service';
 import {Router} from '@angular/router';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {AddStockCompanyInfoComponent} from '../add-stock-company-info/add-stock-company-info.component';
+import {User} from '../../models/User';
+import {TokenStorageService} from '../../services/token-storage.service';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-manage-stocks',
@@ -15,22 +18,37 @@ import {AddStockCompanyInfoComponent} from '../add-stock-company-info/add-stock-
 
 export class ManageStocksComponent implements OnInit {
 
+  isLoggedIn = false;
+  isDataLoaded = false;
+  user: User;
+
   stocks: Stock[];
 
 
   constructor(private stockService: StockService,
               private notificationService: NotificationService,
               private dialog: MatDialog,
-              private router: Router) {
+              private tokenService: TokenStorageService,
+              private userService: UserService) {
   }
 
   ngOnInit(): void {
+
+    this.isLoggedIn = !!this.tokenService.getToken();
 
     this.stockService.getAllStocks()
       .subscribe(data => {
         console.log(data);
         this.stocks = data;
       });
+
+    if (this.isLoggedIn) {
+      this.userService.getCurrentUser()
+        .subscribe(data => {
+          this.user = data;
+          this.isDataLoaded = true;
+        });
+    }
   }
 
   createStock(ticker: string): void {

@@ -7,9 +7,9 @@
 <p class="main-info">{{data.companyInfo}}</p>
 
 <form *ngIf="data.companyInfo == null" class="input-and-submit-form">
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" style="width:260px !important">
     <mat-label class="insert-info-text">Insert Info</mat-label>
-    <input class="input-info-form" #inputText matInput type="text">
+    <textarea class="input-info-form" #inputText matInput type="text" cdkTextareaAutosize></textarea>
   </mat-form-field>
   <button class="add-stock-info-button" (click)="submit(inputText.value)" mat-button>
     Add Info
@@ -17,9 +17,9 @@
 </form>
 
 <form *ngIf="data.companyInfo != null" class="input-and-submit-form">
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" style="width:260px !important">
     <mat-label class="insert-info-text">Update Info</mat-label>
-    <input class="input-info-form" #inputText matInput type="text">
+    <textarea class="textarea-input-info-form" #inputText matInput type="text" cdkTextareaAutosize></textarea>
   </mat-form-field>
   <button class="add-stock-info-button" (click)="submit(inputText.value)" mat-button>
     Update

@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Stock} from '../../models/Stock';
 import {StockService} from '../../services/stock.service';
@@ -14,6 +14,7 @@ export class AddStockCompanyInfoComponent implements OnInit {
 
   stock: Stock;
   public addInfoForm: FormGroup;
+
 
   constructor(private dialogRef: MatDialogRef<AddStockCompanyInfoComponent>,
               @Inject(MAT_DIALOG_DATA) public data,

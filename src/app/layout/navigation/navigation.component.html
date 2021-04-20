@@ -1,7 +1,6 @@
 <mat-toolbar>
-
+  <span class="guest-mode-limited-functionality" *ngIf="isDataLoaded && user.email != 'jastream@hotmail.com'">Guest mode has limited functionality</span>
   <span class="spacer"></span>
-
   <button routerLink="/stocks">
     My Stocks
   </button>
@@ -19,13 +18,8 @@
     Manage Stocks
   </button>
 
-
-
-
   <button *ngIf="isLoggedIn" class="logout" (click)="logOut()" mat-icon-button>
 Logout
   </button>
-
-
 
 </mat-toolbar>
