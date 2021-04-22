@@ -1,4 +1,4 @@
-<div class = "no-available-stocks" *ngIf="stocks.length == 0">
+<div class="no-available-stocks" *ngIf="stocks.length == 0">
   <span>No available prices</span>
 </div>
 
@@ -6,20 +6,28 @@
 <div class="stocks-list">
   <mat-list *ngFor="let stock of stocks">
     <mat-list-item class="stocks-list-item">{{stock.ticker}} ={{stock.currency}}=</mat-list-item>
-    <div class="dates-list">
-      <div class="all-dates" *ngFor="let price of stock.prices">
-        <span class="date-by-date">{{price.createdDate.toString().substring(5, 10)}}</span>
-      </div>
-    </div>
+    <table class="table-with-dates">
+      <tr >
+        <td *ngIf="stock.prices.length > 0" class="table-with-dates-date-cell"> Date</td>
+        <td *ngIf="stock.prices.length == 0" class="table-with-dates-date-cell"> No info yet</td>
+        <td class="table-with-dates-cell" *ngFor="let datePriceSaved of stock.prices">{{datePriceSaved.createdDate.toString().substring(5, 10)}}</td>
+      </tr>
+    </table>
 
-    <div class="all-prices" *ngFor="let price of stock.prices">
-        <span class="price-by-price">{{price.price}}</span>
+    <table class="table-with-prices">
+      <tr >
+        <td *ngIf="stock.prices.length > 0" class="table-with-prices-price-cell"> Price</td>
+        <td class="table-with-prices-cell" *ngFor="let price of stock.prices">{{price.price}}</td>
+      </tr>
+    </table>
 
-     </div>
-    <mat-divider class="horizontal-divider"></mat-divider>
-    </mat-list>
+  </mat-list>
 
 </div>
+
+
+
+
 
 
 

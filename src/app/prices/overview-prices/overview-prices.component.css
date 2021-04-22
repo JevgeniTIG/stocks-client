@@ -5,12 +5,9 @@
 
 .stocks-list-item {
   color: #0EB200;
+  margin-bottom: -13px;
 }
 
-.stock-divider {
-  color: #CAECC8;
-  margin-left: 16px;
-}
 
 .price-by-price{
   color: #CAECC8;
@@ -24,23 +21,35 @@
   margin-left: 70px;
 }
 
-.all-prices{
-  display: inline;
-}
 
-.all-dates{
-  display: inline;
-}
-
-.horizontal-divider {
-  background: #CAECC8;
-  border-style: double;
-  width: 96%;
-  margin-left: 10px;
-}
-
-.date-by-date{
+.table-with-dates, .table-with-prices{
   color: #CAECC8;
   margin-left: 14px;
+}
 
+.table-with-dates-cell {
+  width: 60px;
+  text-align: center;
+  border-left: #CAECC8;
+  border-left-style: ridge;
+}
+
+.table-with-prices-cell {
+  width: 60px;
+  text-align: center;
+  background-color: #CAECC8;
+  color: #282828;
+  border-left: #282828;
+  border-left-style: ridge;
+
+}
+
+.table-with-dates-date-cell {
+  padding-right: 10px;
+}
+
+.table-with-prices-price-cell {
+  padding-right: 10px;
+  background-color: #CAECC8;
+  color: #282828;
 }
