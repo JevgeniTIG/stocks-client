@@ -66,7 +66,7 @@
   margin-top: 100px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .stocks-list-item {
     margin-left: -14px;
   }
@@ -80,7 +80,7 @@
   }
 
   .delete-stock-button {
-    margin-right: 150px;
+    margin-right: 100px;
   }
 
 }
