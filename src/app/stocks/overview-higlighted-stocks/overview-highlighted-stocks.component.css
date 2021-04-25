@@ -16,3 +16,9 @@
   margin-left: 16px;
 }
 
+@media (max-width: 600px) {
+  .stocks-list {
+    margin-left: 0;
+  }
+}
+
