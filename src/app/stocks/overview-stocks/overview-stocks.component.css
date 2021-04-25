@@ -15,7 +15,6 @@
 .stock-divider-mob {
   display: none;
   color: #CAECC8;
-  /*margin-left: 16px;*/
 }
 
 .stock-ticker, .stock-currency, .stock-exchange, .vertical-divider {
@@ -50,6 +49,10 @@
     font-size: small;
   }
 
+  .stocks-list-item {
+    margin-left: 0;
+  }
+
   .no-available-stocks {
     margin-left: 16px;
   }
@@ -60,7 +63,7 @@
   }
 
   .stock-divider-mob {
-    display: unset;
+    display: initial;
   }
 
   .stock-divider {
