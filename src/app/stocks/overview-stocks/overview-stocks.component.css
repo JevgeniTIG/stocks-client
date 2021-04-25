@@ -51,6 +51,7 @@
 
   .stocks-list-item {
     margin-left: 0;
+    margin-left: -10px;
   }
 
   .no-available-stocks {
