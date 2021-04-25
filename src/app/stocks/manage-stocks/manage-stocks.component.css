@@ -66,7 +66,7 @@
   margin-top: 100px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .stocks-list-item {
     margin-left: -14px;
   }
