@@ -12,5 +12,11 @@
   color: #282828;
 }
 
+@media (max-width: 600px) {
+
+  .w-20 {
+    margin-left: 200px;
+  }
+}
 
 

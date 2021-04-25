@@ -62,6 +62,7 @@ button:focus {
 
   .logout {
     font-size: x-small;
+    margin-right: 60px;
   }
 
   .guest-mode-limited-functionality {
