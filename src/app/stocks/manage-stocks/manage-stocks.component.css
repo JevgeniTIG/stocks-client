@@ -65,3 +65,22 @@
   margin-left: 66px;
   margin-top: 100px;
 }
+
+@media (max-width: 600px) {
+  .stocks-list-item {
+    margin-left: 6px;
+  }
+
+  .add-new-stock-card-label, .show-available-stocks-label {
+    margin-left: 20px;
+  }
+
+  .search-and-submit-form {
+    margin-left: 20px;
+  }
+
+  .delete-stock-button {
+    margin-right: 150px;
+  }
+
+}

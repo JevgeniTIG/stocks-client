@@ -16,6 +16,20 @@
   margin-left: 280px;
 }
 
+@media (max-width: 600px) {
+  mat-dialog-container {
+    width: 80%;
+  }
+
+  .w-20 {
+    margin-left: 200px;
+  }
+
+  .add-stock-info-button {
+    margin-left: 180px;
+  }
+}
+
 
 
 

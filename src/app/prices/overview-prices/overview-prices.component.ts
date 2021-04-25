@@ -4,15 +4,6 @@ import {Stock} from '../../models/Stock';
 import {StockService} from '../../services/stock.service';
 
 
-export interface PeriodicElement {
-  date: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-
-];
-
-
 @Component({
   selector: 'app-overview-prices',
   templateUrl: './overview-prices.component.html',
@@ -26,8 +17,6 @@ export class OverviewPricesComponent implements OnInit{
   myPrices: number[];
   arraySize: number;
 
-  displayedColumns: string[] = ['date'];
-  dataSource = ELEMENT_DATA;
 
   constructor(private stockService: StockService, private priceService: PriceService
   ) {
@@ -49,8 +38,6 @@ export class OverviewPricesComponent implements OnInit{
       this.priceService.getAllPrices(s.id)
         .subscribe(data => {
           s.prices = data;
-
-          this.dataSource = data;
         });
     });
   }

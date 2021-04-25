@@ -2,12 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {StockService} from '../../services/stock.service';
 import {Stock} from '../../models/Stock';
 import {NotificationService} from '../../services/notification.service';
-import {Router} from '@angular/router';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {AddStockCompanyInfoComponent} from '../add-stock-company-info/add-stock-company-info.component';
 import {User} from '../../models/User';
 import {TokenStorageService} from '../../services/token-storage.service';
 import {UserService} from '../../services/user.service';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 @Component({
   selector: 'app-manage-stocks',
@@ -29,7 +29,8 @@ export class ManageStocksComponent implements OnInit {
               private notificationService: NotificationService,
               private dialog: MatDialog,
               private tokenService: TokenStorageService,
-              private userService: UserService) {
+              private userService: UserService,
+              private deviceService: DeviceDetectorService) {
   }
 
   ngOnInit(): void {
@@ -79,7 +80,12 @@ export class ManageStocksComponent implements OnInit {
 
   openAddStockInfoDialog(stock: Stock): void {
     const dialogAddStockCompanyInfoConfig = new MatDialogConfig();
-    dialogAddStockCompanyInfoConfig.width = '400px';
+    if (this.deviceService.isMobile()) {
+      dialogAddStockCompanyInfoConfig.width = '300px';
+    }
+    else {
+      dialogAddStockCompanyInfoConfig.width = '400px';
+    }
     dialogAddStockCompanyInfoConfig.data = stock;
     this.dialog.open(AddStockCompanyInfoComponent, dialogAddStockCompanyInfoConfig);
   }

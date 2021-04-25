@@ -50,3 +50,15 @@ button:focus {
   margin-left: 50px;
   font-size: small;
 }
+
+@media (max-width: 600px) {
+  button{
+    font-size: medium;
+  }
+  .border-line {
+    font-size: medium;
+  }
+  .logout {
+    font-size: x-small;
+  }
+}

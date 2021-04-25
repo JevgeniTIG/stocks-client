@@ -18,3 +18,13 @@ mat-form-field {
   margin: 1rem auto;
 
 }
+
+@media (max-width: 600px) {
+  .login-user-card {
+    width: 80%;
+  }
+
+  mat-form-field {
+    width: 70%;
+  }
+}
