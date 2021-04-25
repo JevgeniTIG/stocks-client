@@ -55,10 +55,17 @@ button:focus {
   button{
     font-size: medium;
   }
+
   .border-line {
     font-size: medium;
   }
+
   .logout {
     font-size: x-small;
+  }
+
+  .guest-mode-limited-functionality {
+    font-size: x-small;
+    margin-left: 10px;
   }
 }

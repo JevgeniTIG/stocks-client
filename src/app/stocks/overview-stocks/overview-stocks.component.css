@@ -46,16 +46,17 @@
 @media (max-width: 600px) {
 
   .stocks-list {
-    margin-left: 20px;
+    margin-left: 0;
+    font-size: small;
   }
 
   .no-available-stocks {
-    margin-left: 36px;
+    margin-left: 16px;
   }
 
   .total-number-of-stocks {
     color: #0EB200;
-    margin-left: 36px;
+    margin-left: 16px;
   }
 
   .stock-divider-mob {

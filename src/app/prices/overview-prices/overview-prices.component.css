@@ -56,7 +56,7 @@
 
 @media (max-width: 600px) {
   .stocks-list {
-    margin-left: 20px;
+    margin-left: 0;
   }
 
   .no-available-prices {
