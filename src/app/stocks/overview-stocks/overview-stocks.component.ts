@@ -4,6 +4,7 @@ import {Stock} from '../../models/Stock';
 import {OverviewStockCompanyInfoComponent} from '../overview-stock-company-info/overview-stock-company-info.component';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {DeviceDetectorService} from 'ngx-device-detector';
+import {MailService} from '../../services/mail.service';
 
 @Component({
   selector: 'app-overview-stocks',
@@ -20,7 +21,8 @@ export class OverviewStocksComponent implements OnInit{
 
   constructor(private stockService: StockService,
               private dialog: MatDialog,
-              private deviceService: DeviceDetectorService) {
+              private deviceService: DeviceDetectorService,
+              private mailService: MailService) {
   }
 
   ngOnInit(): void {
@@ -44,6 +46,9 @@ export class OverviewStocksComponent implements OnInit{
   }
 
 
+  sendMail(): void {
+    this.mailService.sendMail().subscribe();
+  }
 
 }
 

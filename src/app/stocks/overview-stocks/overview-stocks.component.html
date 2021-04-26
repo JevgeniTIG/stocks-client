@@ -7,6 +7,8 @@
   <span>{{stocks.length}} STOCKS IN YOUR WATCHLIST</span>
 </div>
 
+<button mat-button class="send-mail-button" (click)="sendMail()">TEST MAIL</button>
+
 <div class="stocks-list">
   <mat-list *ngFor="let stock of stocks">
     <mat-list-item class="stocks-list-item">
