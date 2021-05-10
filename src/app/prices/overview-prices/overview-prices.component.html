@@ -17,7 +17,7 @@
     <table class="table-with-prices">
       <tr >
         <td *ngIf="stock.prices.length > 0" class="table-with-prices-price-cell"> Price</td>
-        <td class="table-with-prices-cell" *ngFor="let price of stock.prices">{{price.price}}</td>
+        <td nowrap class="table-with-prices-cell" *ngFor="let price of stock.prices">{{price.price}}</td>
       </tr>
     </table>
 
