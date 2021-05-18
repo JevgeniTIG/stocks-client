@@ -10,7 +10,6 @@ import {MaterialModule} from './material-module';
 import {MatListModule} from '@angular/material/list';
 import {HttpClientModule} from '@angular/common/http';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OverviewStocksComponent} from './stocks/overview-stocks/overview-stocks.component';
 import {ManageStocksComponent} from './stocks/manage-stocks/manage-stocks.component';
@@ -20,6 +19,7 @@ import {authInterceptorProviders} from './helper/auth-interceptor.service';
 import {authErrorInterceptorProviders} from './helper/error-interceptor.service';
 import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-stocks/overview-highlighted-stocks.component';
 import {AddStockCompanyInfoComponent} from './stocks/add-stock-company-info/add-stock-company-info.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import {AddStockCompanyInfoComponent} from './stocks/add-stock-company-info/add-
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
-    MatIconModule,
+    MatTooltipModule,
   ],
   providers: [authInterceptorProviders, authErrorInterceptorProviders],
   bootstrap: [AppComponent]
