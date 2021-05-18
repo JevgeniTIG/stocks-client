@@ -27,10 +27,6 @@ button:focus {
   flex: 1 1 auto;
 }
 
-.highlighted-button {
-  color: #0EB200;
-}
-
 .highlighted-button:focus {
   outline:0 !important;
 }
