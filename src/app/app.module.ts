@@ -20,6 +20,9 @@ import {authErrorInterceptorProviders} from './helper/error-interceptor.service'
 import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-stocks/overview-highlighted-stocks.component';
 import {AddStockCompanyInfoComponent} from './stocks/add-stock-company-info/add-stock-company-info.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {NgxEchartsModule} from 'ngx-echarts';
+import * as echarts from 'echarts';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ReactiveFormsModule,
     LayoutModule,
     MatTooltipModule,
+    NgxEchartsModule.forRoot({
+      echarts
+    }),
   ],
   providers: [authInterceptorProviders, authErrorInterceptorProviders],
   bootstrap: [AppComponent]

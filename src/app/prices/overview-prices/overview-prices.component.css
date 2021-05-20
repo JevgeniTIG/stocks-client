@@ -1,5 +1,5 @@
 .stocks-list {
-  margin-top: 100px;
+  /*margin-top: 100px;*/
   margin-left: 50px;
 }
 
@@ -62,4 +62,21 @@
   .no-available-prices {
     margin-left: 36px;
   }
+
+  .table-view-button, .chart-view-button {
+    margin-top: 60px;
+    margin-left: 240px;
+  }
+}
+
+.prices-chart {
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+
+button {
+  margin-top: 100px;
+  margin-bottom: -300px;
+  margin-left: 900px;
+  color: #CAECC8;
 }

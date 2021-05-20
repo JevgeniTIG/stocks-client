@@ -2,9 +2,16 @@
   <span>No available prices</span>
 </div>
 
+<button *ngIf="!tableView" class="table-view-button" mat-button (click)="switchToTableView()">Switch to table view</button>
+<button *ngIf="tableView" class="chart-view-button" mat-button (click)="switchToChartView()">Switch to chart view</button>
 
-<div class="stocks-list">
-  <mat-list *ngFor="let stock of stocks">
+<div *ngIf="!tableView">
+<div *ngFor="let chart of charts" echarts [options]="chart" class="prices-chart"></div>
+</div>
+
+<div *ngIf="tableView" class="stocks-list">
+  <mat-list *ngFor="let stock of stocks, let i = index">
+
     <mat-list-item class="stocks-list-item">{{stock.ticker}} ={{stock.currency}}=</mat-list-item>
     <table class="table-with-dates">
       <tr >
@@ -21,9 +28,17 @@
       </tr>
     </table>
 
+
   </mat-list>
 
+
 </div>
+
+<!--<div *ngFor="let chart of charts" echarts [options]="chart"></div>-->
+
+
+
+
 
 
 
