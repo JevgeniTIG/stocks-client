@@ -1,0 +1,54 @@
+<div *ngIf="portfolio.portfolioPositions.length > 0" class="virtual-investor-title">
+  <span>Virtual Investor indicates portfolio profitability.
+    Drag the slider to see investor's earnings.</span>
+</div>
+
+<div *ngIf="portfolio.portfolioPositions.length == 0" class="virtual-investor-title">
+  <span>No investments made yet</span>
+</div>
+
+
+<div *ngIf="portfolio.portfolioPositions.length > 0" class="row">
+  <div class="column">
+    <div class="initial-investment-amount-slider">
+      <mat-slider
+        (input)="updatePortfolio($event.value)"
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="100"
+        step="100"
+        min="100"
+        max="1000"
+        aria-label="units"></mat-slider>
+    </div>
+    <div class="portfolio-data">
+      <h2></h2>
+      <span>Initial investment: {{portfolio.initialInvestmentAmountTotal}} EUR</span>
+      <h2></h2>
+      <span>Total value of portfolio: {{portfolio.totalValue.toFixed(2)}} EUR</span>
+      <h2></h2>
+      <span>Total income of portfolio: {{portfolio.totalProfitability.toFixed(2)}} EUR</span>
+      <h2></h2>
+      <span>Profitability of portfolio: {{portfolio.totalProfitabilityInPercent}} %</span>
+      <h2></h2>
+    </div>
+  </div>
+  <div class="column">
+    <div class="pie-chart-positions-title">
+      <span>Current values of investments by stock</span>
+    </div>
+    <div echarts [options]="optionsPie" class="pie-chart-positions"></div>
+  </div>
+  <div class="column">
+    <div echarts [options]="optionsBar" class="bar-chart-positions"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

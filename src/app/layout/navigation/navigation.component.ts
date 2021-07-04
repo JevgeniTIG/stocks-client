@@ -1,23 +1,27 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PriceService} from '../../services/price.service';
 import {Stock} from '../../models/Stock';
 import {User} from '../../models/User';
 import {TokenStorageService} from '../../services/token-storage.service';
 import {Router} from '@angular/router';
 import {UserService} from '../../services/user.service';
+import {HighlightedStock} from '../../models/HighlightedStock';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
+
 export class NavigationComponent implements OnInit {
 
   isLoggedIn = false;
   isDataLoaded = false;
   user: User;
+  highlightedStocks: HighlightedStock[];
 
-  highlightedStocks: Stock[];
+
+
 
   constructor(private tokenService: TokenStorageService,
               private priceService: PriceService,

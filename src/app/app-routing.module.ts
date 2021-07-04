@@ -6,12 +6,14 @@ import {OverviewPricesComponent} from './prices/overview-prices/overview-prices.
 import {OverviewHighlightedStocksComponent} from './stocks/overview-higlighted-stocks/overview-highlighted-stocks.component';
 import {LoginComponent} from './auth/login/login.component';
 import {AuthGuardService} from './helper/auth-guard.service';
+import {OverviewPortfolioComponent} from './portfolio/overview-portfolio.component';
 
 const routes: Routes = [
   {path: 'stocks', component: OverviewStocksComponent, canActivate: [AuthGuardService]},
   {path: 'manage-stocks', component: ManageStocksComponent, canActivate: [AuthGuardService]},
   {path: 'prices', component: OverviewPricesComponent, canActivate: [AuthGuardService]},
   {path: 'highlighted-prices', component: OverviewHighlightedStocksComponent, canActivate: [AuthGuardService]},
+  {path: 'investor', component: OverviewPortfolioComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];

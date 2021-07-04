@@ -10,6 +10,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   exports: [
@@ -24,7 +25,8 @@ import {MatListModule} from '@angular/material/list';
     MatCardModule,
     MatDialogModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    MatSliderModule
   ]
 })
 

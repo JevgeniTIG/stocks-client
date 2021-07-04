@@ -8,9 +8,7 @@ import {HighlightedStock} from '../../models/HighlightedStock';
   styleUrls: ['./overview-highlighted-stocks.component.css']
 })
 
-
 export class OverviewHighlightedStocksComponent implements OnInit {
-
   highlightedStocks: HighlightedStock[];
 
   constructor(private priceService: PriceService
@@ -24,7 +22,6 @@ export class OverviewHighlightedStocksComponent implements OnInit {
         console.log(data);
       });
   }
-
 
 }
 

@@ -1,0 +1,102 @@
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.virtual-investor-title{
+  margin-top: 100px;
+  margin-left: 60px;
+  color: #0EB200;
+  font-size: medium;
+}
+.initial-investment-amount-slider{
+  margin-top: 30px;
+  margin-left: 60px;
+}
+
+mat-slider {
+  width: 300px;
+}
+
+::ng-deep .mat-slider-thumb-label {
+  background-color: #0EB200 !important;
+}
+
+::ng-deep .mat-slider-track-background {
+  background-color: #CAECC8 !important;
+}
+
+::ng-deep .mat-slider-track-fill {
+  background-color: #0EB200 !important;
+}
+
+::ng-deep .mat-accent .mat-slider-thumb {
+  background-color: black;
+  border: solid 2px #0EB200;
+}
+::ng-deep .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+  background-color: white;
+}
+
+.portfolio-data {
+  margin-left: 60px;
+  color: #CAECC8;
+}
+
+.pie-chart-positions-title{
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-bottom: -60px;
+  color: #CAECC8;
+}
+
+.pie-chart-positions{
+  margin-left: -20px;
+  margin-top: -80px;
+  width: 400px;
+  height: 400px;
+}
+
+.bar-chart-positions{
+  margin-left: -30px;
+  margin-top: 10px;
+  width: 340px;
+  height: 340px;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .virtual-investor-title {
+    margin-left: 10px;
+  }
+  mat-slider {
+    margin-left: -52px;
+  }
+
+  .portfolio-data {
+    margin-left: 10px;
+  }
+
+  .pie-chart-positions-title{
+    margin-left: 10px;
+  }
+  .pie-chart-positions {
+    margin-left: -60px;
+  }
+  .bar-chart-positions {
+    margin-top: -40px;
+    margin-left: 10px;
+  }
+
+}
+

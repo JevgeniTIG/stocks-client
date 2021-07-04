@@ -22,6 +22,7 @@ import {AddStockCompanyInfoComponent} from './stocks/add-stock-company-info/add-
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NgxEchartsModule} from 'ngx-echarts';
 import * as echarts from 'echarts';
+import {OverviewPortfolioComponent} from './portfolio/overview-portfolio.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import * as echarts from 'echarts';
     OverviewHighlightedStocksComponent,
     routingComponents,
     OverviewStockCompanyInfoComponent,
-    AddStockCompanyInfoComponent
+    AddStockCompanyInfoComponent,
+    OverviewPortfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,7 @@ import * as echarts from 'echarts';
     MatTooltipModule,
     NgxEchartsModule.forRoot({
       echarts
-    }),
+    })
   ],
   providers: [authInterceptorProviders, authErrorInterceptorProviders],
   bootstrap: [AppComponent]

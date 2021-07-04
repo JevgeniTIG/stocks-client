@@ -16,6 +16,9 @@ button {
 button:focus {
   outline:0 !important;
 }
+.investor-button {
+  margin-bottom: 8px;
+}
 
 
 .border-line {
@@ -66,5 +69,9 @@ button:focus {
   .guest-mode-limited-functionality {
     font-size: x-small;
     margin-left: 10px;
+  }
+
+  .investor-button {
+    margin-bottom: 10px;
   }
 }
