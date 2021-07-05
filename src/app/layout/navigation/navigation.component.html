@@ -16,7 +16,7 @@
   </button>
   <span class="border-line" *ngIf="isDataLoaded && user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks"> | </span>
 
-  <button *ngIf="isDataLoaded && user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks">
+  <button *ngIf="isDataLoaded && !checkIfMobile() && user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks">
     Manage Stocks
   </button>
 
@@ -36,7 +36,7 @@
 
   <span class="border-line"> | </span>
 
-  <button routerLink="/investor" class="investor-button-text">Virtual Portfolio</button>
+  <button *ngIf="!checkIfMobile()" routerLink="/investor" class="investor-button-text">Virtual Portfolio</button>
   <button *ngIf="checkIfMobile()" routerLink="/investor" class="investor-button">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve" height="20px">
