@@ -23,7 +23,7 @@
 }
 
 mat-slider {
-  width: 300px;
+  width: 280px;
 }
 
 ::ng-deep .mat-slider-thumb-label {
