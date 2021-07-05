@@ -20,7 +20,7 @@
     Manage Stocks
   </button>
 
-  <button *ngIf="isDataLoaded && checkIfMobile() &&user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks">
+  <button *ngIf="isDataLoaded && checkIfMobile() &&user.email == 'jastream@hotmail.com'" routerLink="/manage-stocks" class="manage-stocks-button-icon">
 
     <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M11.0189 17H2.75L2.64823 17.0068C2.28215 17.0565 2 17.3703 2 17.75C2 18.1642 2.33579 18.5 2.75 18.5H11.0764C11.0261 18.174 11 17.8401 11 17.5C11 17.3318 11.0064 17.165 11.0189 17Z" fill="#212121"/>
@@ -39,7 +39,7 @@
   <button *ngIf="!checkIfMobile()" routerLink="/investor" class="investor-button-text">Virtual Portfolio</button>
   <button *ngIf="checkIfMobile()" routerLink="/investor" class="investor-button">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve" height="20px">
+         viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve" width="20px">
 <g id="line_39_">
 	<path d="M255.581,173.154v-55.646c8.927,3.997,14.455,11.576,16.568,22.77l34.928-4.701c-2.389-14.241-7.917-25.587-16.568-34.086
 		c-8.652-8.498-20.289-13.643-34.928-15.45V71.969h-20.013v14.087c-15.833,1.623-28.512,7.718-38.036,18.283
