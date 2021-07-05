@@ -47,9 +47,11 @@ mat-slider {
 }
 
 .portfolio-data {
+  margin-top: 60px;
   margin-left: 60px;
   color: #CAECC8;
 }
+
 
 .pie-chart-positions-title{
   margin-top: 40px;
@@ -66,8 +68,7 @@ mat-slider {
 }
 
 .bar-chart-positions{
-  margin-left: -30px;
-  margin-top: 10px;
+  margin-left: -10px;
   width: 340px;
   height: 340px;
 }

@@ -93,8 +93,10 @@ export class OverviewPortfolioComponent implements OnInit {
       },
       toolbox: {
         show: true,
+        left: 200,
         feature: {
           magicType: {show: true, type: ['line', 'bar']},
+
         }
       },
       calculable: true,

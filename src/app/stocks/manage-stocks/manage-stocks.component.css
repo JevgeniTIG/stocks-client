@@ -50,6 +50,11 @@
 
 .delete-stock-button {
   margin-right: 600px;
+  margin-bottom: 2px;
+}
+
+.manage-stock-button {
+  margin-bottom: 2px;
 }
 
 ::ng-deep.mat-form-field-underline {

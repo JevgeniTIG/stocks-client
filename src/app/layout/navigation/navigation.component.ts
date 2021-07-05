@@ -6,6 +6,7 @@ import {TokenStorageService} from '../../services/token-storage.service';
 import {Router} from '@angular/router';
 import {UserService} from '../../services/user.service';
 import {HighlightedStock} from '../../models/HighlightedStock';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 @Component({
   selector: 'app-navigation',
@@ -21,12 +22,11 @@ export class NavigationComponent implements OnInit {
   highlightedStocks: HighlightedStock[];
 
 
-
-
   constructor(private tokenService: TokenStorageService,
               private priceService: PriceService,
               private userService: UserService,
-              private router: Router) {
+              private router: Router,
+              private deviceService: DeviceDetectorService) {
   }
 
   ngOnInit(): void {
@@ -48,15 +48,18 @@ export class NavigationComponent implements OnInit {
     }
   }
 
-
   logOut(): void {
     this.tokenService.logOut();
     this.router.navigate(['']);
   }
 
-
   refresh(): void {
     window.location.reload();
   }
+
+  checkIfMobile(): boolean {
+    return this.deviceService.isMobile();
+  }
+
 
 }
