@@ -17,7 +17,7 @@
       <tr >
         <td *ngIf="stock.prices.length > 0" class="table-with-dates-date-cell"> Date</td>
         <td *ngIf="stock.prices.length == 0" class="table-with-dates-date-cell"> No info yet</td>
-        <td nowrap="nowrap" class="table-with-dates-cell" *ngFor="let datePriceSaved of stock.prices">{{datePriceSaved.createdDate.toString().substring(5, 10)}}</td>
+        <td nowrap class="table-with-dates-cell" *ngFor="let datePriceSaved of stock.prices">{{datePriceSaved.createdDate.toString().substring(5, 10)}}</td>
       </tr>
     </table>
 

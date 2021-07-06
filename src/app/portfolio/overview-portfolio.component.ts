@@ -128,6 +128,7 @@ export class OverviewPortfolioComponent implements OnInit {
 
 
   updatePortfolio(amount): any {
+    this.investmentAmount = amount;
     this.getInvestorProfile(amount);
     this.positions = [];
     this.positionsX = [];
