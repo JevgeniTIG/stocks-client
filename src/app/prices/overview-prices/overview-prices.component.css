@@ -1,5 +1,4 @@
 .stocks-list {
-  /*margin-top: 100px;*/
   margin-left: 50px;
 }
 
@@ -8,8 +7,7 @@
   margin-bottom: -13px;
 }
 
-
-.price-by-price{
+.price-by-price {
   color: #CAECC8;
   margin-left: 14px;
   display: inline;
@@ -22,7 +20,7 @@
 }
 
 
-.table-with-dates, .table-with-prices{
+.table-with-dates, .table-with-prices {
   color: #CAECC8;
   margin-left: 14px;
 }
@@ -45,9 +43,7 @@
 }
 
 .table-with-dates-date-cell {
-  padding-right: 10px;
-  -webkit-padding-after: 10px;
-
+  padding-right: 10px !important;
 }
 
 .table-with-prices-price-cell {
