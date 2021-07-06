@@ -44,7 +44,7 @@
 
 .table-with-dates-date-cell {
   padding-right: 10px;
-  position: absolute;
+  position: sticky;
 }
 
 .table-with-prices-price-cell {
