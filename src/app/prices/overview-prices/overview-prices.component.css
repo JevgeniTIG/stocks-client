@@ -46,6 +46,8 @@
 
 .table-with-dates-date-cell {
   padding-right: 10px;
+  -webkit-padding-start: 10px;
+
 }
 
 .table-with-prices-price-cell {
