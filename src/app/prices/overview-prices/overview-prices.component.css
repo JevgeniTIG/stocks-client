@@ -43,8 +43,8 @@
 }
 
 .table-with-dates-date-cell {
-  /*padding-right: 10px;*/
-  width: max-content; padding-right: 10px;
+  padding-right: 10px;
+  position: absolute;
 }
 
 .table-with-prices-price-cell {
