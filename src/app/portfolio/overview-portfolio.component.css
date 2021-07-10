@@ -73,6 +73,12 @@ mat-slider {
   height: 340px;
 }
 
+.bar-2-chart-positions{
+  margin-left: 50px;
+  width: 340px;
+  height: 340px;
+}
+
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;

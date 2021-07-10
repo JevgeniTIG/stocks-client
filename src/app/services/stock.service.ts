@@ -32,7 +32,7 @@ export class StockService {
     return this.http.post(STOCK_API + id + '/update-stock-info', stock);
   }
 
-  getStockByTicker(ticker: string): any{
+  getStockByTicker(ticker: string): Observable<any> {
     return this.http.get(STOCK_API + ticker);
   }
 
