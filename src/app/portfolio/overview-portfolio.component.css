@@ -88,18 +88,15 @@ mat-slider {
     width: 100%;
   }
   .virtual-investor-title {
-    margin-left: 10px;
+    margin-left: 12px;
   }
   mat-slider {
-    margin-left: -52px;
+    margin-left: -50px;
   }
 
   .portfolio-data {
-    margin-left: 10px;
+    margin-left: 12px;
     margin-top: 20px;
-  }
-  .investor-button {
-    margin-top: 4px;
   }
 
   .pie-chart-positions-title{

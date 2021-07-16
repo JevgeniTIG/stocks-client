@@ -16,9 +16,6 @@ button {
 button:focus {
   outline:0 !important;
 }
-.investor-button {
-  margin-bottom: 8px;
-}
 
 
 .border-line {
@@ -54,6 +51,10 @@ button:focus {
   button{
     font-size: small;
     padding: 4px;
+  }
+
+  .investor-button {
+    margin-top: 4px;
   }
 
   .border-line {
