@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {InvestorService} from '../services/investor.service';
 import {Portfolio} from '../models/Portfolio';
 import {PortfolioPosition} from '../models/PortfolioPosition';
-import {LEFT_ARROW, NUM_CENTER} from '@angular/cdk/keycodes';
 import {StockService} from '../services/stock.service';
-import {Stock} from '../models/Stock';
+import {PriceService} from '../services/price.service';
+import {MinMaxCurrent} from '../models/MinMaxCurrent';
 
 
 @Component({
@@ -18,7 +18,8 @@ export class OverviewPortfolioComponent implements OnInit {
 
 
   constructor(private investorService: InvestorService,
-              private stockService: StockService
+              private stockService: StockService,
+              private priceService: PriceService
   ) {
   }
 
@@ -26,6 +27,7 @@ export class OverviewPortfolioComponent implements OnInit {
   investmentAmount: number;
   optionsPie: any;
   optionsBar: any;
+  optionsBarMinMaxCurrent: any;
   positions: any[] = [];
   positionsX: any[] = [];
   positionsYInititalAmount: any[] = [];
@@ -33,6 +35,9 @@ export class OverviewPortfolioComponent implements OnInit {
   stockList: any[] = [];
   minPricesList: any[] = [];
   maxPricesList: any[] = [];
+  currentPricesList: any [] = [];
+  stocks: any [] = [];
+  profitOfStock: any [] = [];
 
 
   ngOnInit(): void {
@@ -47,17 +52,11 @@ export class OverviewPortfolioComponent implements OnInit {
         this.setOptionsPieChart(data.portfolioPositions, investmentAmount);
         this.setOptionsBarChart(data.portfolioPositions, investmentAmount);
       });
+    this.priceService.getMinMaxCurrent().subscribe(data => {
+      this.setOptionsBarChartMinMaxCurrent(data);
+    });
   }
 
-  getMinAndMaxPriceOfStock(data: any): Stock [] {
-    data.forEach(stock => {
-      this.stockService.getStockByTicker(stock.ticker)
-        .subscribe(stockData => {
-          this.stockList.push(stockData);
-        });
-    });
-    return this.stockList;
-  }
 
   setOptionsPieChart(chartData: PortfolioPosition [], investmentAmount): void {
     chartData.forEach(pos => {
@@ -97,19 +96,7 @@ export class OverviewPortfolioComponent implements OnInit {
       this.positionsX.push(pos.ticker);
       this.positionsYInititalAmount.push(investmentAmount);
       this.positionsYAmountWithProfit.push((investmentAmount + pos.profitability).toFixed(2));
-    });
-    this.getMinAndMaxPriceOfStock(chartData).forEach(s => {
-      if (s.currency === 'EUR') {
-        this.minPricesList.push(s.minPrice);
-        this.maxPricesList.push(s.maxPrice);
-      } else if (s.currency === 'USD') {
-        this.minPricesList.push((s.minPrice * 0.84).toFixed(2));
-        this.maxPricesList.push((s.maxPrice * 0.84).toFixed(2));
-      } else if (s.currency === 'SEK') {
-        this.minPricesList.push((s.minPrice * 0.098).toFixed(2));
-        this.maxPricesList.push((s.maxPrice * 0.098).toFixed(2));
-      }
-
+      this.profitOfStock.push(pos.profitability.toFixed(2));
     });
 
     this.optionsBar = {
@@ -148,14 +135,57 @@ export class OverviewPortfolioComponent implements OnInit {
           data: this.positionsYInititalAmount,
         },
         {
-          name: 'Year Min, EUR',
+          name: 'Profit',
           type: 'line',
-          data: this.minPricesList,
+          data: this.profitOfStock,
+        }
+      ]
+    };
+  }
+
+
+  setOptionsBarChartMinMaxCurrent(chartData: MinMaxCurrent []): void {
+
+    this.optionsBarMinMaxCurrent = {
+      tooltip: {
+        trigger: 'axis'
+      },
+      toolbox: {
+        show: true,
+        left: 200,
+        feature: {
+          magicType: {show: true, type: ['line', 'bar']},
+
+        }
+      },
+      calculable: true,
+      xAxis: [
+        {
+          type: 'category',
+          data: chartData.map(stock => stock.ticker),
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+
+        {
+          name: 'Year Min',
+          type: 'line',
+          data: chartData.map(stock => stock.minPrice),
         },
         {
-          name: 'Year Max, EUR',
+          name: 'Year Max',
           type: 'line',
-          data: this.maxPricesList,
+          data: chartData.map(stock => stock.maxPrice),
+        },
+        {
+          name: 'Current Price',
+          type: 'line',
+          data: chartData.map(stock => stock.currentValue)
         }
       ]
     };
@@ -171,6 +201,8 @@ export class OverviewPortfolioComponent implements OnInit {
     this.positionsYAmountWithProfit = [];
     this.minPricesList = [];
     this.maxPricesList = [];
+    this.currentPricesList = [];
+    this.profitOfStock = [];
 
   }
 

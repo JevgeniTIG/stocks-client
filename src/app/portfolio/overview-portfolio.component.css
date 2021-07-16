@@ -1,6 +1,7 @@
 .column {
   float: left;
-  width: 33.33%;
+  /*width: 33.33%;*/
+  width: 50%;
 }
 
 /* Clear floats after the columns */
@@ -55,29 +56,32 @@ mat-slider {
 
 .pie-chart-positions-title{
   margin-top: 40px;
-  margin-left: 60px;
+  margin-left: -60px;
   margin-bottom: -60px;
   color: #CAECC8;
 }
 
 .pie-chart-positions{
-  margin-left: -20px;
+  margin-left: -140px;
   margin-top: -80px;
   width: 400px;
   height: 400px;
 }
 
 .bar-chart-positions{
-  margin-left: -10px;
+  margin-left: 50px;
+  margin-top: -40px;
   width: 340px;
   height: 340px;
 }
 
-.bar-2-chart-positions{
-  margin-left: 50px;
+.bar-chart-min-max-current{
+  margin-left: -70px;
+  margin-top: -40px;
   width: 340px;
   height: 340px;
 }
+
 
 @media screen and (max-width: 600px) {
   .column {
@@ -102,6 +106,10 @@ mat-slider {
     margin-left: -60px;
   }
   .bar-chart-positions {
+    margin-top: -40px;
+    margin-left: 10px;
+  }
+  .bar-chart-min-max-current {
     margin-top: -40px;
     margin-left: 10px;
   }

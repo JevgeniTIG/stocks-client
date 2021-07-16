@@ -40,8 +40,17 @@
     </div>
     <div echarts [options]="optionsPie" class="pie-chart-positions"></div>
   </div>
+
+</div>
+
+
+
+<div *ngIf="portfolio.portfolioPositions.length > 0" class="row">
   <div class="column">
     <div echarts [options]="optionsBar" class="bar-chart-positions"></div>
+  </div>
+  <div class="column">
+    <div echarts [options]="optionsBarMinMaxCurrent" class="bar-chart-min-max-current"></div>
   </div>
 
 </div>
