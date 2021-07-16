@@ -88,14 +88,14 @@ mat-slider {
     width: 100%;
   }
   .virtual-investor-title {
-    margin-left: 12px;
+    margin-left: 16px;
   }
   mat-slider {
     margin-left: -50px;
   }
 
   .portfolio-data {
-    margin-left: 12px;
+    margin-left: 16px;
     margin-top: 20px;
   }
 
