@@ -22,6 +22,7 @@ mat-form-field {
 @media (max-width: 600px) {
   .login-user-card {
     width: 100%;
+    border-radius: 0;
   }
 
   mat-form-field {
