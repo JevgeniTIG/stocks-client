@@ -77,7 +77,7 @@ mat-slider {
 
 .bar-chart-positions{
   margin-left: 50px;
-  margin-top: -20px;
+  margin-top: -40px;
   width: 340px;
   height: 340px;
 }
@@ -113,7 +113,7 @@ mat-slider {
     margin-left: -60px;
   }
   .bar-chart-positions {
-    margin-top: -40px;
+    margin-top: -20px;
     margin-left: 10px;
   }
   .bar-chart-min-max-current {
