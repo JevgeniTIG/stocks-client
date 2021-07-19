@@ -28,9 +28,11 @@
       <h2></h2>
       <span>Total value of portfolio: {{portfolio.totalValue.toFixed(2)}} EUR</span>
       <h2></h2>
-      <span>Total income of portfolio: {{portfolio.totalProfitability.toFixed(2)}} EUR</span>
+      <span class="portfolio-data-text-profitability-negative" *ngIf="portfolio.totalProfitability < 0">Total income of portfolio: {{portfolio.totalProfitability.toFixed(2)}} EUR</span>
+      <span class="portfolio-data-text-profitability-positive" *ngIf="portfolio.totalProfitability > 0">Total income of portfolio: {{portfolio.totalProfitability.toFixed(2)}} EUR</span>
       <h2></h2>
-      <span>Profitability of portfolio: {{portfolio.totalProfitabilityInPercent}} %</span>
+      <span class="portfolio-data-text-profitability-percent-negative" *ngIf="portfolio.totalProfitabilityInPercent < 0">Profitability of portfolio: {{portfolio.totalProfitabilityInPercent}} %</span>
+      <span class="portfolio-data-text-profitability-percent-positive" *ngIf="portfolio.totalProfitabilityInPercent > 0">Profitability of portfolio: {{portfolio.totalProfitabilityInPercent}} %</span>
       <h2></h2>
     </div>
   </div>

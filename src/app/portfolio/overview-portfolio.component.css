@@ -53,6 +53,13 @@ mat-slider {
   color: #CAECC8;
 }
 
+.portfolio-data-text-profitability-negative, .portfolio-data-text-profitability-percent-negative {
+  color: orangered;
+}
+.portfolio-data-text-profitability-positive, .portfolio-data-text-profitability-percent-positive {
+  color: #0EB200;
+}
+
 
 .pie-chart-positions-title{
   margin-top: 40px;
