@@ -5,6 +5,7 @@ import {PortfolioPosition} from '../models/PortfolioPosition';
 import {StockService} from '../services/stock.service';
 import {PriceService} from '../services/price.service';
 import {MinMaxCurrent} from '../models/MinMaxCurrent';
+import {color} from 'echarts';
 
 
 @Component({
@@ -103,12 +104,18 @@ export class OverviewPortfolioComponent implements OnInit {
       tooltip: {
         trigger: 'axis'
       },
+      legend: {
+        data: ['Current Value', 'Initial Value'],
+        left: 20,
+        textStyle: {
+          color: '#CAECC8',
+        }
+      },
       toolbox: {
         show: true,
-        left: 200,
+        left: 240,
         feature: {
           magicType: {show: true, type: ['line', 'bar']},
-
         }
       },
       calculable: true,
