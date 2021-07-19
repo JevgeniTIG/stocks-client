@@ -21,10 +21,10 @@ mat-form-field {
 
 @media (max-width: 600px) {
   .login-user-card {
-    width: 80%;
+    width: 100%;
   }
 
   mat-form-field {
-    width: 70%;
+    width: 90%;
   }
 }
