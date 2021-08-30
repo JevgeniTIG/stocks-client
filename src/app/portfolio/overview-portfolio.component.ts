@@ -4,8 +4,7 @@ import {Portfolio} from '../models/Portfolio';
 import {PortfolioPosition} from '../models/PortfolioPosition';
 import {StockService} from '../services/stock.service';
 import {PriceService} from '../services/price.service';
-import {MinMaxCurrent} from '../models/MinMaxCurrent';
-import {color} from 'echarts';
+import {MinMaxCurrentPurchase} from '../models/MinMaxCurrentPurchase';
 
 
 @Component({
@@ -31,7 +30,7 @@ export class OverviewPortfolioComponent implements OnInit {
   optionsBarMinMaxCurrent: any;
   positions: any[] = [];
   positionsX: any[] = [];
-  positionsYInititalAmount: any[] = [];
+  positionsYInitialAmount: any[] = [];
   positionsYAmountWithProfit: any[] = [];
   stockList: any[] = [];
   minPricesList: any[] = [];
@@ -53,8 +52,8 @@ export class OverviewPortfolioComponent implements OnInit {
         this.setOptionsPieChart(data.portfolioPositions, investmentAmount);
         this.setOptionsBarChart(data.portfolioPositions, investmentAmount);
       });
-    this.priceService.getMinMaxCurrent().subscribe(data => {
-      this.setOptionsBarChartMinMaxCurrent(data);
+    this.priceService.getMinMaxCurrentPurchase().subscribe(data => {
+      this.setOptionsBarChartMinMaxCurrentPurchase(data);
     });
   }
 
@@ -95,7 +94,7 @@ export class OverviewPortfolioComponent implements OnInit {
 
     chartData.forEach(pos => {
       this.positionsX.push(pos.ticker);
-      this.positionsYInititalAmount.push(investmentAmount);
+      this.positionsYInitialAmount.push(investmentAmount);
       this.positionsYAmountWithProfit.push((investmentAmount + pos.profitability).toFixed(2));
       this.profitOfStock.push(pos.profitability.toFixed(2));
     });
@@ -139,7 +138,7 @@ export class OverviewPortfolioComponent implements OnInit {
         {
           name: 'Initial Value',
           type: 'bar',
-          data: this.positionsYInititalAmount,
+          data: this.positionsYInitialAmount,
         },
         {
           name: 'Profit',
@@ -151,7 +150,7 @@ export class OverviewPortfolioComponent implements OnInit {
   }
 
 
-  setOptionsBarChartMinMaxCurrent(chartData: MinMaxCurrent []): void {
+  setOptionsBarChartMinMaxCurrentPurchase(chartData: MinMaxCurrentPurchase []): void {
 
     this.optionsBarMinMaxCurrent = {
       tooltip: {
@@ -193,6 +192,11 @@ export class OverviewPortfolioComponent implements OnInit {
           name: 'Current Price',
           type: 'line',
           data: chartData.map(stock => stock.currentValue)
+        },
+        {
+          name: 'Purchase Price',
+          type: 'line',
+          data: chartData.map(stock => stock.purchasePrice)
         }
       ]
     };
@@ -204,7 +208,7 @@ export class OverviewPortfolioComponent implements OnInit {
     this.getInvestorProfile(amount);
     this.positions = [];
     this.positionsX = [];
-    this.positionsYInititalAmount = [];
+    this.positionsYInitialAmount = [];
     this.positionsYAmountWithProfit = [];
     this.minPricesList = [];
     this.maxPricesList = [];

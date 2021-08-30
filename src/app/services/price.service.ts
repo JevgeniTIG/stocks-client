@@ -23,8 +23,8 @@ export class PriceService {
     return this.http.post(PRICE_API + 'evaluate', null);
   }
 
-  getMinMaxCurrent(): Observable<any> {
-    return this.http.get(PRICE_API + 'minmaxcurrent');
+  getMinMaxCurrentPurchase(): Observable<any> {
+    return this.http.get(PRICE_API + 'minmaxcurrentpurchase');
   }
 
 }
